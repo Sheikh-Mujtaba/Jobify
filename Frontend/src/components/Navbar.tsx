@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
-import { FaShoppingCart } from "react-icons/fa";
+
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               <Link to="/jobs">
                 <p>Jobs</p>
               </Link>
-              <FaShoppingCart />
+       
               <button className="bg-blue-500 text-white px-[1rem] py-[0.5rem] rounded-full">
                 Login
               </button>
