@@ -22,6 +22,20 @@ const Navbar: React.FC = () => {
       });
   }, []);
 
+  const handleLogout = () => {
+    // Call the logout endpoint to destroy the session on the backend
+    axios.post('http://localhost:8082/auth/logout', {}, { withCredentials: true })
+      .then((res) => {
+        setIsLoggedIn(false); // Update state to reflect the logged-out state
+      })
+      .catch((err) => {
+        console.error('Error logging out:', err);
+      });
+  };
+
+
+
+
 
   const handleClick = (): void => {
     setShowMenu(!showMenu);
@@ -48,8 +62,8 @@ const Navbar: React.FC = () => {
 
             {/* Show Logoff if logged in, otherwise show Login */}
             {isLoggedIn ? (
-              <Link to="/home">
-                <button className="bg-blue-500 text-white px-[1rem] py-[0.5rem] rounded-full">
+              <Link to="/">
+                <button className="bg-red-500 text-white px-[1rem] py-[0.5rem] rounded-full" onClick={handleLogout}>
                   Logoff
                 </button>
               </Link>

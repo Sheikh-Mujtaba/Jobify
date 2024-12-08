@@ -8,6 +8,7 @@ import Jobs from './pages/Jobs';
 import JobDetails from './pages/JobDetails';
 import Apply from './pages/Apply';
 import Login from './users/Login';
+import Register from './users/Register';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/jobs' element={<Jobs/>}/>
+          <Route path='/register' element = {<Register/>}/>
           <Route path='/login' element={<Login/>}/>
 
           <Route path="/jobDetails/:id" element={<JobDetails />} /> {/* Match this route */}
